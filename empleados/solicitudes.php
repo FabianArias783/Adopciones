@@ -124,7 +124,8 @@ $res = $con->query($sql);
             <tr id="sol-<?php echo $row['id']; ?>">
                 <td><?php echo $row['id']; ?></td>
                 <td>
-                    <img src="../uploads_productos/<?php echo $row['producto_imagen']; ?>" style="width:60px; height:60px; border-radius:10px;">
+                    <img src="uploads_productos/<?php echo $row['producto_imagen']; ?>" style="width:60px; height:60px; border-radius:10px;">
+                    
                     <br><?php echo $row['producto_nombre']; ?>
                 </td>
                 <td><?php echo $row['cliente_nombre'] . ' ' . $row['cliente_apellidos']; ?></td>
