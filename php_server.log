@@ -1,0 +1,13 @@
+[Tue Feb  3 21:11:15 2026] PHP 8.3.6 Development Server (http://localhost:8000) started
+[Tue Feb  3 21:11:18 2026] [::1]:59834 Accepted
+[Tue Feb  3 21:11:18 2026] [::1]:59834 [200]: GET /frontend/pwa/index.html
+[Tue Feb  3 21:11:18 2026] [::1]:59834 Closing
+[Tue Feb  3 21:11:18 2026] [::1]:59840 Accepted
+[Tue Feb  3 21:11:18 2026] [::1]:59840 [200]: GET /frontend/pwa/js/app.js
+[Tue Feb  3 21:11:18 2026] [::1]:59840 Closing
+[Tue Feb  3 21:11:19 2026] [::1]:59846 Accepted
+[Tue Feb  3 21:11:19 2026] [::1]:59846 [200]: GET /frontend/panel/index.html
+[Tue Feb  3 21:11:19 2026] [::1]:59846 Closing
+[Tue Feb  3 21:11:19 2026] [::1]:59856 Accepted
+[Tue Feb  3 21:11:19 2026] [::1]:59856 [200]: GET /frontend/panel/js/app.js
+[Tue Feb  3 21:11:19 2026] [::1]:59856 Closing
