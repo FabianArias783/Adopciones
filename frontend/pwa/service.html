@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio - MARP Track</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <button onclick="window.location.href='index.html'" class="btn btn-outline-secondary mb-3">&larr; Volver</button>
+
+        <div id="loading" class="text-center">Cargando información del manifiesto...</div>
+        <div id="error-msg" class="alert alert-danger hidden"></div>
+
+        <div id="service-form-container" class="hidden">
+            <div class="card mb-3">
+                <div class="card-header bg-primary text-white">Detalle del Manifiesto</div>
+                <div class="card-body">
+                    <h5 id="client-name" class="card-title"></h5>
+                    <p class="card-text" id="client-address"></p>
+                    <p class="card-text"><small class="text-muted" id="expected-items"></small></p>
+                </div>
+            </div>
+
+            <form id="service-form">
+                <input type="hidden" id="manifest-id">
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Estado del Servicio</label>
+                    <select id="status" class="form-select" onchange="toggleFailureReason()">
+                        <option value="completed">Realizado Exitosamente</option>
+                        <option value="failed">No Realizado</option>
+                    </select>
+                </div>
+
+                <div id="failure-section" class="mb-3 hidden">
+                    <label class="form-label">Motivo de No Realización</label>
+                    <select id="failure-reason" class="form-select">
+                        <option value="">Seleccione...</option>
+                        <option value="Cliente cerrado">Cliente cerrado</option>
+                        <option value="Dirección incorrecta">Dirección incorrecta</option>
+                        <option value="Cliente no autorizado">Cliente no autorizado</option>
+                        <option value="Falta mercancía">Falta mercancía</option>
+                        <option value="Acceso bloqueado">Acceso bloqueado</option>
+                        <option value="Problema mecánico">Problema mecánico</option>
+                        <option value="Clima extremo">Clima extremo</option>
+                        <option value="Error manifiesto">Error manifiesto</option>
+                        <option value="Tiempo excedido">Tiempo excedido</option>
+                        <option value="Otro">Otro (Especifique en notas)</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Notas</label>
+                    <textarea id="notes" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Evidencias (Fotos)</label>
+                    <input type="file" id="evidence-photos" class="form-control" accept="image/*" multiple capture="environment">
+                    <div class="form-text">Máximo 5 fotos.</div>
+                </div>
+
+                <!-- GPS Status -->
+                <div class="alert alert-info py-2" id="gps-status">📍 Obteniendo ubicación...</div>
+
+                <button type="submit" id="submit-btn" class="btn btn-success w-100" disabled>Guardar Servicio</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/service.js"></script>
+</body>
+</html>
